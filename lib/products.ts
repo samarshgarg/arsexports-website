@@ -102,7 +102,7 @@ export const products: Product[] = [
     name: "Standing Goddess Lakshmi",
     description:
       "12-inch idol of Goddess Lakshmi in gold-tone brass finish with fine drapery detailing.",
-    image: "/dec-lakshmi.jpg",   // served from your public/ folder,
+    image: "/rel-lakshmi.jpg",   // served from your public/ folder,
     category: "religious",
     tag: "Premium",
   },
