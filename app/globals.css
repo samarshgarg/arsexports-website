@@ -1,26 +1,133 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Gold palette */
+  --color-gold-50: #fbf6e3;
+  --color-gold-100: #f5e8c1;
+  --color-gold-200: #edd48a;
+  --color-gold-300: #e2c05a;
+  --color-gold-400: #d4af37;
+  --color-gold-500: #c4952a;
+  --color-gold-600: #a67c20;
+  --color-gold-700: #886015;
+  --color-gold-800: #6b480d;
+  --color-gold-900: #4d3108;
+
+  /* Dark warm palette */
+  --color-dark-50: #f5edd3;
+  --color-dark-100: #e8d4ae;
+  --color-dark-200: #c9a97a;
+  --color-dark-300: #8c6a42;
+  --color-dark-400: #3d2b1f;
+  --color-dark-500: #2c1e15;
+  --color-dark-600: #1f1510;
+  --color-dark-700: #16100c;
+  --color-dark-800: #0d0a05;
+  --color-dark-900: #080603;
+
+  /* Fonts */
+  --font-serif: var(--font-cormorant), "Georgia", serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(196, 149, 42, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(196, 149, 42, 0); }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0d0a05;
+  color: #e8d4ae;
+  font-family: var(--font-inter), system-ui, sans-serif;
 }
+
+/* Gold gradient text */
+.gold-text {
+  background: linear-gradient(135deg, #e2c05a 0%, #c4952a 40%, #d4af37 70%, #a67c20 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shimmer text animation */
+.shimmer-text {
+  background: linear-gradient(90deg, #a67c20 0%, #e2c05a 30%, #d4af37 50%, #e2c05a 70%, #a67c20 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Gold border cards */
+.card-gold-border {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#1f1510, #1f1510) padding-box,
+    linear-gradient(135deg, rgba(212, 175, 55, 0.5), rgba(136, 96, 21, 0.3), rgba(212, 175, 55, 0.5)) border-box;
+  transition: all 0.3s ease;
+}
+.card-gold-border:hover {
+  background:
+    linear-gradient(#241a12, #241a12) padding-box,
+    linear-gradient(135deg, #d4af37, #886015, #d4af37) border-box;
+  box-shadow: 0 8px 40px rgba(196, 149, 42, 0.18);
+  transform: translateY(-4px);
+}
+
+/* Section divider */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.gold-divider::before,
+.gold-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(196, 149, 42, 0.6), transparent);
+}
+
+/* Form fields */
+.form-field {
+  width: 100%;
+  padding: 0.875rem 1.125rem;
+  background: rgba(36, 26, 18, 0.8);
+  border: 1px solid rgba(196, 149, 42, 0.25);
+  border-radius: 0.5rem;
+  color: #e8d4ae;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.9375rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+.form-field:focus {
+  border-color: #c4952a;
+  box-shadow: 0 0 0 3px rgba(196, 149, 42, 0.12);
+}
+.form-field::placeholder { color: rgba(232, 212, 174, 0.35); }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0d0a05; }
+::-webkit-scrollbar-thumb { background: linear-gradient(#c4952a, #886015); border-radius: 3px; }
+
+/* Utility animations */
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-shimmer { animation: shimmer 3s linear infinite; }
+.animate-pulse-gold { animation: pulse-gold 2s infinite; }
