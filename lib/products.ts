@@ -65,7 +65,7 @@ export const products: Product[] = [
     name: "Veined Leaf Bowl",
     description:
       "Nature-inspired decorative bowl with realistic vein texture. Perfect for potpourri or as a display piece.",
-    image: img("ars-leaf-06"),
+    image: "/dec-leaf.jpg",   // served from your public/ folder,
     category: "decor",
   },
   {
@@ -73,7 +73,7 @@ export const products: Product[] = [
     name: "Elephant Bookend Pair",
     description:
       "Intricately detailed elephant bookends in antique brass. A royal addition to any library.",
-    image: img("ars-elephant-07"),
+    image: "/dec-elephant.jpg",   // served from your public/ folder,
     category: "decor",
     tag: "New",
   },
@@ -82,7 +82,7 @@ export const products: Product[] = [
     name: "Peacock Showpiece",
     description:
       "Elegant peacock with spread-tail feathers, each quill individually crafted for lifelike detail.",
-    image: img("ars-peacock-08"),
+    image: "/dec-peacock.jpg",   // served from your public/ folder,
     category: "decor",
     tag: "Exclusive",
   },
@@ -93,7 +93,7 @@ export const products: Product[] = [
     name: "Deepak Diya Set (Set of 5)",
     description:
       "Hand-engraved oil lamps with scalloped borders, perfect for pooja rooms and ceremonial occasions.",
-    image: img("ars-diya-01"),
+    image: "/rel-diyaset.jpg",   // served from your public/ folder,
     category: "religious",
     tag: "Best Seller",
   },
@@ -102,7 +102,7 @@ export const products: Product[] = [
     name: "Standing Goddess Lakshmi",
     description:
       "12-inch idol of Goddess Lakshmi in gold-tone brass finish with fine drapery detailing.",
-    image: img("ars-lakshmi-02"),
+    image: "/dec-lakshmi.jpg",   // served from your public/ folder,
     category: "religious",
     tag: "Premium",
   },
@@ -111,7 +111,7 @@ export const products: Product[] = [
     name: "Meditating Ganesha",
     description:
       "Seated Ganesha in meditation pose. Smooth polished brass with subtle antique highlights.",
-    image: img("ars-ganesh-03"),
+    image: "/rel-ganesh.jpg",   // served from your public/ folder,
     category: "religious",
     tag: "Best Seller",
   },
@@ -120,7 +120,7 @@ export const products: Product[] = [
     name: "Sacred Nandi Figurine",
     description:
       "Holy bull Nandi in a contemplative seated pose, satin-finish brass on wooden base.",
-    image: img("ars-nandi-04"),
+    image: "/rel-nandi.jpg",   // served from your public/ folder,
     category: "religious",
   },
   {
@@ -128,7 +128,7 @@ export const products: Product[] = [
     name: "Ornate Puja Thali Set",
     description:
       "Complete set: engraved thali with attached diya, ghanta, kumkum holder, and incense stand.",
-    image: img("ars-thali-05"),
+    image: "/rel-poojathali.jpg",   // served from your public/ folder,
     category: "religious",
     tag: "Exclusive",
   },
@@ -137,7 +137,7 @@ export const products: Product[] = [
     name: "Temple Ghanta Bell",
     description:
       "Deep-resonance temple bell with traditional motif engravings. Produces a clear, long-sustain tone.",
-    image: img("ars-bell-06"),
+    image: "/rel-bell.jpg",   // served from your public/ folder,
     category: "religious",
     tag: "Premium",
   },
@@ -148,7 +148,7 @@ export const products: Product[] = [
     name: "Premium Keepsake Box",
     description:
       "Hinged brass box with velvet interior lining and engraved lattice lid. Perfect for jewellery or mementos.",
-    image: img("ars-box-01"),
+    image: "/gift-box.jpg",   // served from your public/ folder,
     category: "gift",
     tag: "Best Seller",
   },
@@ -157,7 +157,7 @@ export const products: Product[] = [
     name: "Ornate Photo Frame",
     description:
       "4×6 inch frame with hand-embossed floral border in warm brass. A cherished personal gift.",
-    image: img("ars-frame-02"),
+    image: "/gift-photo.jpg",   // served from your public/ folder,
     category: "gift",
     tag: "New",
   },
@@ -166,7 +166,7 @@ export const products: Product[] = [
     name: "Jewellery Organiser Tree",
     description:
       "Elegant 12-branch brass tree for rings, bracelets, and necklaces. Functional art for any dressing table.",
-    image: img("ars-tree-03"),
+    image: "/gift-tree.jpg",   // served from your public/ folder,
     category: "gift",
     tag: "Exclusive",
   },
@@ -175,7 +175,7 @@ export const products: Product[] = [
     name: "Engraved Bookmark Set (×3)",
     description:
       "Three uniquely patterned brass bookmarks with hand-knotted silk tassels. A literary luxury gift.",
-    image: img("ars-bookmark-04"),
+    image: "/gift-bookmarks.jpg",   // served from your public/ folder,
     category: "gift",
   },
   {
@@ -183,7 +183,7 @@ export const products: Product[] = [
     name: "Art Deco Card Holder",
     description:
       "Sleek executive business-card holder with Art Deco chevron motif. A conversation starter on any desk.",
-    image: img("ars-card-05"),
+    image: "/gift-cardholder.jpg",   // served from your public/ folder,
     category: "gift",
     tag: "Premium",
   },
@@ -192,7 +192,7 @@ export const products: Product[] = [
     name: "Executive Compass & Pen Set",
     description:
       "Solid brass compass with matching ballpoint pen in a premium gift box. Ideal for corporate gifting.",
-    image: img("ars-compass-06"),
+    image: "/gift-pen.jpg",   // served from your public/ folder,
     category: "gift",
     tag: "Exclusive",
   },
@@ -204,7 +204,7 @@ export const categories = [
     label: "Home Decor",
     description:
       "Sculptural brass pieces that elevate every interior — from minimalist modern to classical heritage.",
-    image: img("ars-cat-decor", 800, 560),
+    image: "/cat-decor.jpg",   // served from your public/ folder,
     count: products.filter((p) => p.category === "decor").length,
   },
   {
@@ -212,7 +212,7 @@ export const categories = [
     label: "Religious & Spiritual",
     description:
       "Sacred idols, diyas, and pooja sets crafted with devotion and meticulous attention to detail.",
-    image: img("ars-cat-religious", 800, 560),
+    image: "/cat-rel.jpg",   // served from your public/ folder,
     count: products.filter((p) => p.category === "religious").length,
   },
   {
@@ -220,7 +220,7 @@ export const categories = [
     label: "Premium Gift Items",
     description:
       "Curated brass gifts for corporate, personal, and festive occasions that leave a lasting impression.",
-    image: img("ars-cat-gift", 800, 560),
+    image: "/cat-gift.jpg",   // served from your public/ folder,
     count: products.filter((p) => p.category === "gift").length,
   },
 ];
