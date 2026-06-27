@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { Send, CheckCircle } from "lucide-react";
 
 const interests = [
@@ -17,9 +17,6 @@ export default function LeadForm() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
-
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
@@ -48,16 +45,17 @@ export default function LeadForm() {
       id="lead-form"
       className="relative py-28 bg-dark-800 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(196,149,42,0.08)_0%,transparent_60%)]" />
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gold-700/40 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(196,149,42,0.08)_0%,transparent_60%)]" />
+      <div className="pointer-events-none absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gold-700/40 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-5 md:px-10">
-        <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
           {/* Left — pitch */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
           >
             <p className="text-xs tracking-[0.35em] uppercase text-gold-500/70 mb-5">
@@ -138,7 +136,8 @@ export default function LeadForm() {
           {/* Right — form */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
           >
             {submitted ? (
@@ -219,8 +218,8 @@ export default function LeadForm() {
                   <label className="block text-xs text-dark-100/50 tracking-widest uppercase mb-2">
                     Product Interest *
                   </label>
-                  <select name="interest" required className="form-field">
-                    <option value="" disabled selected>
+                  <select name="interest" required defaultValue="" className="form-field">
+                    <option value="" disabled>
                       Select a category
                     </option>
                     {interests.map((i) => (
