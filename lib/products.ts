@@ -20,7 +20,7 @@ export const products: Product[] = [
     name: "Heritage Brass Vase",
     description:
       "Majestic hand-turned vase with traditional floral engravings. A timeless centrepiece for modern interiors.",
-    image: img("ars-vase-01"),
+    image: "/dec-vase.jpg",   // served from your public/ folder,
     category: "decor",
     tag: "Best Seller",
   },
@@ -29,7 +29,7 @@ export const products: Product[] = [
     name: "Royale Horse Sculpture",
     description:
       "Bold rearing-horse figurine cast in solid brass with satin finish. Ideal for executive desks and display shelves.",
-    image: img("ars-horse-02"),
+    image: "/dec-horse.jpg",   // served from your public/ folder,
     category: "decor",
     tag: "Exclusive",
   },
@@ -38,7 +38,7 @@ export const products: Product[] = [
     name: "Antique Candle Stand",
     description:
       "Three-pillar candelabra with ornate scroll carvings. Available in antique and polished finishes.",
-    image: img("ars-candle-03"),
+    image: "/dec-candle.jpg",   // served from your public/ folder,
     category: "decor",
     tag: "Premium",
   },
@@ -47,7 +47,7 @@ export const products: Product[] = [
     name: "Engraved Wall Panel",
     description:
       "Large decorative brass panel featuring hand-etched geometric mandala patterns. Statement wall art.",
-    image: img("ars-wall-04"),
+    image: "/dec-wallpanel.jpg",   // served from your public/ folder,
     category: "decor",
     tag: "Exclusive",
   },
@@ -56,7 +56,7 @@ export const products: Product[] = [
     name: "Prosperity Tortoise",
     description:
       "Symbol of longevity and wealth, crafted in solid brass with high-detail shell texture.",
-    image: img("ars-tortoise-05"),
+    image: "/dec-tortoise.jpg",   // served from your public/ folder,
     category: "decor",
     tag: "Best Seller",
   },
