@@ -90,7 +90,7 @@ export async function POST(req: NextRequest) {
 
     await resend.emails.send({
       from: "ARS Exports Website <onboarding@resend.dev>",
-      to: ["support@arsexports.com"],
+      to: ["info@arsexports.com"],
       replyTo: email,
       subject: `New Lead: ${name}${country ? ` (${country})` : ""}${interest ? ` — ${interest}` : ""}`,
       html,

@@ -109,11 +109,11 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:support@arsexports.com"
+                  href="mailto:info@arsexports.com"
                   className="flex items-start gap-3 text-dark-100/45 hover:text-gold-400 text-sm transition-colors"
                 >
                   <Mail size={14} className="shrink-0 mt-0.5 text-gold-600/60" />
-                  support@arsexports.com
+                  info@arsexports.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-dark-100/45 text-sm">

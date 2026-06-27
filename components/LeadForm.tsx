@@ -37,7 +37,7 @@ export default function LeadForm() {
       if (!res.ok) throw new Error("Failed");
       setSubmitted(true);
     } catch {
-      setError("Something went wrong. Please email us directly at support@arsexports.com");
+      setError("Something went wrong. Please email us directly at info@arsexports.com");
     } finally {
       setLoading(false);
     }
@@ -127,10 +127,10 @@ export default function LeadForm() {
               </a>
               <br />
               <a
-                href="mailto:support@arsexports.com"
+                href="mailto:info@arsexports.com"
                 className="inline-flex items-center gap-2 text-gold-400/70 hover:text-gold-300 text-sm transition-colors mt-2"
               >
-                support@arsexports.com
+                info@arsexports.com
               </a>
             </div>
           </motion.div>

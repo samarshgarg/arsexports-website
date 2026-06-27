@@ -34,7 +34,7 @@ export default function ContactPage() {
       if (!res.ok) throw new Error("Failed");
       setSubmitted(true);
     } catch {
-      setError("Something went wrong. Please email us at support@arsexports.com");
+      setError("Something went wrong. Please email us at info@arsexports.com");
     } finally {
       setLoading(false);
     }
@@ -126,7 +126,7 @@ export default function ContactPage() {
                   </a>
 
                   <a
-                    href="mailto:support@arsexports.com"
+                    href="mailto:info@arsexports.com"
                     className="flex items-start gap-4 group"
                   >
                     <div className="w-10 h-10 rounded-lg bg-gold-900/30 border border-gold-700/30 flex items-center justify-center shrink-0">
@@ -137,7 +137,7 @@ export default function ContactPage() {
                         Email
                       </div>
                       <div className="text-dark-50 text-sm group-hover:text-gold-300 transition-colors">
-                        support@arsexports.com
+                        info@arsexports.com
                       </div>
                     </div>
                   </a>
