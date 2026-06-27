@@ -15,18 +15,29 @@ const interests = [
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setLoading(true);
+    setError("");
     const data = new FormData(e.currentTarget);
+    const body = Object.fromEntries(data.entries());
+
     try {
-      await fetch("https://formsubmit.co/ajax/support@arsexports.com", {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { Accept: "application/json" },
-        body: data,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
       });
-    } catch { /* noop */ }
-    setSubmitted(true);
+      if (!res.ok) throw new Error("Failed");
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please email us at support@arsexports.com");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -207,9 +218,6 @@ export default function ContactPage() {
                   onSubmit={handleSubmit}
                   className="card-gold-border rounded-2xl p-8 space-y-6"
                 >
-                  <input type="hidden" name="_subject" value="New Enquiry — ARS Exports Website" />
-                  <input type="hidden" name="_captcha" value="false" />
-                  <input type="hidden" name="_template" value="table" />
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
@@ -315,11 +323,19 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  {error && (
+                    <p className="text-red-400/80 text-xs text-center">{error}</p>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full py-4 bg-gold-500 hover:bg-gold-400 text-dark-800 font-semibold text-sm tracking-widest uppercase rounded transition-all shadow-lg shadow-gold-900/30"
+                    disabled={loading}
+                    className="w-full flex items-center justify-center gap-2 py-4 bg-gold-500 hover:bg-gold-400 disabled:opacity-60 disabled:cursor-not-allowed text-dark-800 font-semibold text-sm tracking-widest uppercase rounded transition-all shadow-lg shadow-gold-900/30"
                   >
-                    Send Enquiry
+                    {loading && (
+                      <span className="w-4 h-4 border-2 border-dark-800 border-t-transparent rounded-full animate-spin" />
+                    )}
+                    {loading ? "Sending..." : "Send Enquiry"}
                   </button>
                   <p className="text-center text-dark-100/25 text-xs">
                     Your information is kept confidential and never shared.
