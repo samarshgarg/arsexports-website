@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import ProductsPage from "@/components/ProductsPage";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/products" },
   title: "Products — Brass Decor, Religious & Gift Collections | ARS Exports",
   description:
     "Explore 500+ exclusive brass designs across Home Decor, Religious Items, and Premium Gift categories. Handcrafted in Moradabad for global export.",

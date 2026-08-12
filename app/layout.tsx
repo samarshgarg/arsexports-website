@@ -18,6 +18,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.arsexports.com"),
+  alternates: { canonical: "/" },
   title: "ARS Exports — Premium Brass Artifacts from Moradabad, India",
   description:
     "ARS Exports crafts exclusive brass home decor, religious artifacts, and premium gift items in Moradabad, India's Brass Capital. Exporting to 30+ countries worldwide.",
@@ -27,7 +29,7 @@ export const metadata: Metadata = {
     title: "ARS Exports — Premium Brass Artifacts",
     description:
       "Exclusive handcrafted brass artifacts from Moradabad. Decor, Religious & Gift collections for global importers.",
-    url: "https://arsexports.com",
+    url: "https://www.arsexports.com",
     siteName: "ARS Exports",
     type: "website",
   },
